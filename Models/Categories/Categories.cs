@@ -1,12 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
-namespace Models.Categories
+namespace Models.Category
 {
-    public class Categories
+    public class Category
     {
-        
+        [Key]
+        public int Id {get;set; }
+        [Required(ErrorMessage ="")]
+        [RegularExpression(@"^[a-zA-Z]\D+$",ErrorMessage ="")]
+        [DisplayName("Category Name")]
+        public string Name {get;set;}
+        [Required(ErrorMessage ="")]
+        [Range(1, Int32.MaxValue, ErrorMessage ="")]
+        [DisplayName("Display Name")]
+        public int DisplayOrder { get; set; }
     }
 }

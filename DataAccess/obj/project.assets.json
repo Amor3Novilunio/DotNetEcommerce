@@ -1521,6 +1521,16 @@
             "rid": "win"
           }
         }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
       }
     }
   },
@@ -4087,13 +4097,19 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 9.0.0-preview.1.24081.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0-preview.1.24081.2",
-      "Microsoft.EntityFrameworkCore.Tools >= 9.0.0-preview.1.24081.2"
+      "Microsoft.EntityFrameworkCore.Tools >= 9.0.0-preview.1.24081.2",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4128,7 +4144,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

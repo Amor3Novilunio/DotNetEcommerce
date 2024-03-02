@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Ecommerce.DataAccess;
+using DataAccess.ApplicationDb;
 
 var builder = WebApplication.CreateBuilder(args);
 
