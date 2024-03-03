@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Models.Category;
+using Ecommerce.Models;
 
-namespace DataAccess.ApplicationDb
+namespace Ecommerce.DataAccess.ApplicationDbContext
 {
     public class ApplicationDbContext : DbContext
     {
@@ -10,6 +10,15 @@ namespace DataAccess.ApplicationDb
 
         }
 
-        public DbSet<Category> Categories {get;set;} 
+        public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "Marvel", DisplayOrder = 1 },
+                new Category { Id = 2, Name = "DC", DisplayOrder = 2 },
+                new Category { Id = 3, Name = "Sci-Fi", DisplayOrder = 3 }
+            );
+        }
     }
 }
