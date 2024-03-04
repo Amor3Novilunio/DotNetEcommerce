@@ -2,3 +2,7 @@ item : {"Id":4,"Name":"aa","DisplayOrder":23} | successfully deleted | 03/03/202
 item : {"Id":6,"Name":"aa","DisplayOrder":5} | successfully deleted | 03/03/2024 8:59:41 AM
 item : {"Id":7,"Name":"Test","DisplayOrder":24} | successfully deleted | 03/03/2024 8:59:50 AM
 item : {"Id":5,"Name":"aa","DisplayOrder":4} | successfully deleted | 03/03/2024 9:04:20 AM
+item : {"Id":1,"Name":"Marvel","DisplayOrder":1} | successfully deleted | 04/03/2024 11:04:42 AM
+item : {"Id":2,"Name":"DC","DisplayOrder":2} | successfully deleted | 04/03/2024 11:04:42 AM
+item : {"Id":3,"Name":"Sci-Fi","DisplayOrder":3} | successfully deleted | 04/03/2024 11:04:43 AM
+item : {"Id":8,"Name":"Drama","DisplayOrder":4} | successfully deleted | 04/03/2024 11:04:44 AM

@@ -105,3 +105,52 @@ item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOr
 item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 03/03/2024 9:06:51 AM
 item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":5}] | successfully retrieved | 03/03/2024 9:06:55 AM
 item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 03/03/2024 9:06:59 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:08:12 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:12:44 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:12:49 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:13:13 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:13:42 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:19 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:20 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:21 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:22 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:22 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:22 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:22 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:22 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:24 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:51 AM
+Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Web.Controllers.CategoriesController.Index() | 04/03/2024 9:14:53 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:32:41 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 9:38:04 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 10:49:58 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 10:58:23 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":5}] | successfully retrieved | 04/03/2024 10:58:25 AM
+item : [{"Id":1,"Name":"Marvel","DisplayOrder":1},{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 10:58:29 AM
+item : [{"Id":2,"Name":"DC","DisplayOrder":2},{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 11:04:42 AM
+item : [{"Id":3,"Name":"Sci-Fi","DisplayOrder":3},{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 11:04:42 AM
+item : [{"Id":8,"Name":"Drama","DisplayOrder":4}] | successfully retrieved | 04/03/2024 11:04:43 AM
+item : [] | successfully retrieved | 04/03/2024 11:04:44 AM
+item : [] | successfully retrieved | 04/03/2024 11:04:51 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:05:01 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:25:23 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:25:25 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:11 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:13 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:15 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:16 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:18 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:46:21 AM
+item : [{"Id":9,"Name":"Drama","DisplayOrder":1}] | successfully retrieved | 04/03/2024 11:47:29 AM
