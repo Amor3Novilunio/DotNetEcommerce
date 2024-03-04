@@ -7945,11 +7945,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\WEb\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\WEb\\Web.csproj",
       "packagesPath": "C:\\Users\\Setapai\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\obj\\",
+      "outputPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\WEb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7971,11 +7971,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\DataAccess\\DataAccess.csproj"
             },
-            "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {
-              "projectPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj"
+            "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj"
             }
           }
         }

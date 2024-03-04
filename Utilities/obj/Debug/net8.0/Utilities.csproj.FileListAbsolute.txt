@@ -1,0 +1,12 @@
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\bin\Debug\net8.0\Utilities.deps.json
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\bin\Debug\net8.0\Utilities.dll
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\bin\Debug\net8.0\Utilities.pdb
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.AssemblyInfoInputs.cache
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.AssemblyInfo.cs
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.csproj.CoreCompileInputs.cache
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.sourcelink.json
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.dll
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\refint\Utilities.dll
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\Utilities.pdb
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Utilities\obj\Debug\net8.0\ref\Utilities.dll
