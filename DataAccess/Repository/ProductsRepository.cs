@@ -10,4 +10,7 @@ public class ProductsRepository : Repository<Product>, IProductsRepository
     public ProductsRepository(ApplicationDbContext db) : base(db){
         _db = db;
     }
+    public void Update(Product objData){
+        _db.Update(objData);
+    }
 }

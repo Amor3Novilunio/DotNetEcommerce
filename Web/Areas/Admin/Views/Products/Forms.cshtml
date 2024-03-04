@@ -1,19 +1,19 @@
 @{
-    ViewData["Title"] = "Categories";
+    ViewData["Title"] = "Products";
 }
 
-@model Category
-<form method="post" asp-controller="Categories" asp-action=@TempData["routeStatus"]>
+@model Product
+<form method="post" asp-controller="Products" asp-action=@TempData["routeStatus"]>
     @if (TempData["routeStatus"] is "Update")
     {
         <input asp-for="Id" class="form-control" type="text" hidden>
     }
     <div class="row">
         <div class="col-12 py-4">
-            <a asp-controller="Categories" asp-action="Index">
+            <a asp-controller="Products" asp-action="Index">
                 <i class="fa-solid fa-caret-left float-start mx-2" style="font-size: 3rem;"></i>
             </a>
-            <h1>@TempData["routeStatus"] Category</h1>
+            <h1>@TempData["routeStatus"] Product</h1>
         </div>
     </div>
     <div class="col-12 mt-md-5" style="height: 20rem;">
@@ -26,15 +26,15 @@
                 </div>
             </div>
             <div class="col-12 col-md-2">
-                <label asp-for="DisplayOrder" class="my-2"></label>
-                <input asp-for="DisplayOrder" class="form-control" type="number" placeholder="Display Order">
+                <label asp-for="Price" class="my-2"></label>
+                <input asp-for="Price" class="form-control" type="number" placeholder="Display Order">
                 <div class="mt-2">
-                    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                    <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-12 col-md-2">
                 <button type="Submit" class="mt-4 form-control rounded-1 text-white bg-primary">@TempData["routeStatus"]
-                    Category</button>
+                    Product</button>
             </div>
         </div>
     </div>

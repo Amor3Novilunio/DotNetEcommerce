@@ -7,7 +7,10 @@ namespace DataAccess.Repository.IRepository
 {
     public interface IUnitOfWork
     {
-        CategoriesRepository Category {get;}
+        CategoriesRepository Category { get; }
+        ProductsRepository Product { get; }
+        UsersRepository User { get; }
+
         void Save();
     }
 }

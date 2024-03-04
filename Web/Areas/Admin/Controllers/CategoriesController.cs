@@ -126,7 +126,7 @@ namespace Web.Areas.Admin.Controllers
             }
 
             _unitOfWork.Category.Delete(categoryDataFound);
-            // _categoriesRepo.Save();
+            _unitOfWork.Save();
             TempData["Status"] = "Delete";
             TempData["Message"] = "Category Item Deleted Successfully";
             _logger.Delete($"item : {JsonSerializer.Serialize(categoryDataFound)} | successfully deleted");

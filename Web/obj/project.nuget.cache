@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q1CjsMJntOYeYO38GJx3HTuFAv8pjjT3p0cnH09WpUbfXY30F421RiujKszbdAYDBO7JEx5mya8Bv+T7GbhtwQ==",
+  "dgSpecHash": "jcskdcrp/iFgsHvBwhA2ln84qP/CfCPZnR30Lx4U56pXcGPcfyWUDu40rrQfdI/CLq8EtV5hMKEi4b/aG4GWXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\Web.csproj",
+  "projectFilePath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Setapai\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Setapai\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
