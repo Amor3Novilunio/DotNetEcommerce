@@ -1,2 +1,8 @@
 item : {"Id":3,"Name":"Coke","Description":"Soda","Price":40,"Category":"Soda","Createdby":"Amor","CreatedAt":"2024-03-04T13:10:35.804785","UpdatedAt":"0001-01-01T00:00:00"} | successfully deleted | 04/03/2024 2:00:52 PM
 item : {"Id":3,"Name":"Coke","Description":"Soda","Price":40,"Category":"Soda","Createdby":"Amor","CreatedAt":"2024-03-04T13:10:35.804785","UpdatedAt":"0001-01-01T00:00:00"} | successfully deleted | 04/03/2024 2:02:18 PM
+item : {"Id":12,"Name":"boba","Description":"asd","Price":23,"CategoryId":3,"ImageUrl":"testa","CreatedBy":"bana","Category":null} | successfully deleted | 06/03/2024 2:03:49 PM
+item : {"Id":14,"Name":"toradora","Description":"asdpoe","Price":52,"CategoryId":2,"ImageUrl":"nigag","CreatedBy":"blackanise","Category":null} | successfully deleted | 06/03/2024 2:08:31 PM
+item : {"Id":13,"Name":"boba23","Description":"asd","Price":23,"CategoryId":3,"ImageUrl":"testa","CreatedBy":"bana","Category":null} | successfully deleted | 06/03/2024 2:08:32 PM
+item : {"Id":11,"Name":"boba2","Description":"asd","Price":23,"CategoryId":3,"ImageUrl":"testa","CreatedBy":"bana","Category":null} | successfully deleted | 06/03/2024 2:08:33 PM
+item : {"Id":10,"Name":"test23","Description":"asd","Price":55,"CategoryId":1,"ImageUrl":"asd","CreatedBy":"wew","Category":null} | successfully deleted | 06/03/2024 2:08:33 PM
+item : {"Id":9,"Name":"test","Description":"test","Price":50,"CategoryId":3,"ImageUrl":"Newtest","CreatedBy":"testt","Category":null} | successfully deleted | 06/03/2024 2:08:35 PM

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {}
+    "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {
+    "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj",
+        "projectPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\Setapai\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\obj\\",
+        "outputPath": "C:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -61,6 +61,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

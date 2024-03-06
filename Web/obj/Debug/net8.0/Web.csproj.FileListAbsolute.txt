@@ -256,3 +256,4 @@ C:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\web\bin\Debug\net
 C:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+c:\Users\Setapai\Desktop\PortfolioProjects\1monthWeb\Ecommerce\Web\obj\Debug\net8.0\Web.MvcApplicationPartsAssemblyInfo.cs

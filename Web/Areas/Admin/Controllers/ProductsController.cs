@@ -2,7 +2,9 @@ using System.Text.Json;
 using DataAccess.Repository.IRepository;
 using DumpLogger;
 using Ecommerce.Models;
+using Ecommerce.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Web.Areas.Admin.Controllers;
 
@@ -30,80 +32,73 @@ public class ProductsController : Controller
         }
     }
 
-    public IActionResult Forms(){
+    public IActionResult Forms(int? id)
+    {
         TempData.Keep("routeStatus");
-        switch (TempData["routeStatus"])
+        TempData["routeStatus"] = "Create";
+        IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.ReadAll().Select(i => new SelectListItem
         {
-            case "Update":
-                TempData.Keep("formData");
-                return View(JsonSerializer.Deserialize<Product>(TempData["formData"]!.ToString()!));
-            default:
-                return View();
+            Text = i.Name,
+            Value = i.Id.ToString()
         }
-    }
-
-
-    public IActionResult Create()
-    {
-        TempData["routeStatus"] = nameof(Create);
-        return RedirectToAction("Forms");
-    }
-
-    [HttpGet]
-    public IActionResult Update(int? id)
-    {
-        if (id == 0 || id == null)
+        );
+        ProductVM productVM = new()
         {
-            return NotFound();
-        }
+            Product = new Product(),
+            CategoryList = CategoryList
+        };
 
-        Product? objData = _unitOfWork.Product.ReadFirstOrDefault(i => i.Id == id);
-        if (objData == null)
+        if (id != 0 && id != null)
         {
-            return NotFound();
+            Product objData = _unitOfWork.Product.ReadFirstOrDefault(i => i.Id == id);
+            if (objData == null)
+            {
+                return NotFound();
+            }
+            productVM.Product = objData;
+            TempData["routeStatus"] = "Update";
         }
-
-        TempData["routeStatus"] = nameof(Update);
-        TempData["formData"] = JsonSerializer.Serialize(objData);
-        return RedirectToAction("Forms");
+        return View(productVM);
     }
-
     [HttpPost]
-    public IActionResult Create(Product objData)
+    public IActionResult Forms(ProductVM objData)
     {
         if (!ModelState.IsValid)
         {
-            TempData["Status"] = "Error";
-            TempData["Message"] = "Failed to update Product Item";
-            _logger.Create($"item : {JsonSerializer.Serialize(objData)} | update Failed");
-            return RedirectToAction(nameof(Index));
-
+            ModelStateCheck(productVModel: objData.Product, Error: true);
         }
+        else
+        {
+            switch (TempData["routeStatus"])
+            {
+                case "Update":
+                    Update(objData.Product);
+                    ModelStateCheck(productVModel: objData.Product, Error: false);
+                    return RedirectToAction(nameof(Index));
+                case "Create":
+                    Create(objData.Product);
+                    ModelStateCheck(productVModel: objData.Product, Error: false);
+                    return RedirectToAction(nameof(Index));
+                default:
+                    ModelStateCheck(productVModel: objData.Product, Error: true);
+                    break;
+            }
+        }
+        return View(objData);
+    }
+
+
+    private void Create(Product objData)
+    {
         _unitOfWork.Product.Create(objData);
         _unitOfWork.Save();
-        TempData["Status"] = "Create";
-        TempData["Message"] = "Product Created Successfully";
-        _logger.Create($"item : {JsonSerializer.Serialize(objData)} | successfully created");
-        return RedirectToAction(nameof(Index));
     }
 
-    [HttpPost]
-    public IActionResult Update(Product objData)
+    private void Update(Product objData)
     {
-        if (!ModelState.IsValid)
-        {
-            TempData["Status"] = "Error";
-            TempData["Message"] = "Failed to update Product Item";
-            _logger.Update($"item : {JsonSerializer.Serialize(objData)} | update Failed");
-            return RedirectToAction(nameof(Index));
-        }
-
         _unitOfWork.Product.Update(objData);
         _unitOfWork.Save();
-        TempData["Status"] = "Update";
-        TempData["Message"] = "Product Item Updated Successfully";
-        _logger.Update($"item : {JsonSerializer.Serialize(objData)} | successfully updated");
-        return RedirectToAction(nameof(Index));
+        ModelStateCheck(productVModel: objData, Error: false);
     }
 
     [HttpGet]
@@ -128,5 +123,22 @@ public class ProductsController : Controller
         TempData["Message"] = "Product Item Deleted Successfully";
         _logger.Delete($"item : {JsonSerializer.Serialize(dataFound)} | successfully deleted");
         return RedirectToAction(nameof(Index));
+    }
+
+    // Helper
+    private void ModelStateCheck(Product productVModel, bool Error = false)
+    {
+        if (Error)
+        {
+            TempData["Status"] = "Error";
+            TempData["Message"] = $"Failed to {TempData["routeStatus"]} Product Item";
+            _logger.Update($"item : {JsonSerializer.Serialize(productVModel)} | {TempData["routeStatus"]} Failed");
+        }
+        else
+        {
+            TempData["Status"] = TempData["routeStatus"];
+            TempData["Message"] = $"Product Item {TempData["routeStatus"]}ed Successfully";
+            _logger.Create($"item : {JsonSerializer.Serialize(productVModel)} | successfully updated");
+        }
     }
 }

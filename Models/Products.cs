@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Ecommerce.Models
 {
@@ -12,18 +15,21 @@ namespace Ecommerce.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        [DisplayName("Product Name")]
+        public string? Name { get; set; }
         [Required]
         public string? Description { get; set; }
         [Required]
         public int Price { get; set; }
         [Required]
-        public string Category { get; set; }
+        [DisplayName("Categories")]
+        public int CategoryId { get; set; }
+        [ValidateNever]
+        public string? ImageUrl { get; set; }
         [Required]
-        public string Createdby {get;set;}  
-        [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        [Required]
-        public DateTime UpdatedAt { get; set; }
+        public string? CreatedBy { get; set; }
+        [ForeignKey("CategoryId")]
+        [ValidateNever]
+        public Category? Category { get; set; }
     }
 }

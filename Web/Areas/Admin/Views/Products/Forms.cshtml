@@ -2,11 +2,11 @@
     ViewData["Title"] = "Products";
 }
 
-@model Product
-<form method="post" asp-controller="Products" asp-action=@TempData["routeStatus"]>
+@model ProductVM
+<form method="POST" asp-controller="Products" enctype="multipart/form-data">
     @if (TempData["routeStatus"] is "Update")
     {
-        <input asp-for="Id" class="form-control" type="text" hidden>
+        <input asp-for="Product.Id" class="form-control" type="text" hidden>
     }
     <div class="row">
         <div class="col-12 py-4">
@@ -16,22 +16,51 @@
             <h1>@TempData["routeStatus"] Product</h1>
         </div>
     </div>
-    <div class="col-12 mt-md-5" style="height: 20rem;">
+    <div class="col-12">
         <div class="row justify-content-center">
             <div class="col-12 col-md-2">
-                <label asp-for="Name" class="my-2"></label>
-                <input asp-for="Name" class="form-control" type="text" placeholder="Name">
-                <div class="mt-2">
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+                <label asp-for="Product.Name" class="my-2"></label>
+                <input asp-for="Product.Name" class="form-control" type="text" placeholder="Name">
             </div>
             <div class="col-12 col-md-2">
-                <label asp-for="Price" class="my-2"></label>
-                <input asp-for="Price" class="form-control" type="number" placeholder="Display Order">
-                <div class="mt-2">
-                    <span asp-validation-for="Price" class="text-danger"></span>
+                <label asp-for="Product.Price" class="my-2"></label>
+                <input asp-for="Product.Price" class="form-control" type="number" placeholder="Price">
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <label asp-for="Product.Description" class="my-2"></label>
+                        <textarea asp-for="Product.Description" class="form-control"
+                            placeholder="Description"></textarea>
+                    </div>
                 </div>
             </div>
+            <div class="col-4">
+                <label asp-for="Product.CategoryId" class="my-2"></label>
+                <select asp-for="Product.CategoryId" asp-items=@Model.CategoryList class="form-select">
+                    <option disabled hidden selected>Select a Category</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <label asp-for="Product.ImageUrl" class="my-2"></label>
+                        <input asp-for="Product.ImageUrl" type="text" class="form-control"
+                            placeholder="ImageUrl"></input>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <label asp-for="Product.CreatedBy" class="my-2"></label>
+                        <input asp-for="Product.CreatedBy" type="text" class="form-control"
+                            placeholder="CreatedBy"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-12 col-md-2">
                 <button type="Submit" class="mt-4 form-control rounded-1 text-white bg-primary">@TempData["routeStatus"]
                     Product</button>

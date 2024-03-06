@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240304090139_CreatedProductsAndUsersTable")]
-    partial class CreatedProductsAndUsersTable
+    [Migration("20240305104038_Update_All_Table_Column_CreatedBy")]
+    partial class Update_All_Table_Column_CreatedBy
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,8 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Createdby")
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DisplayOrder")
@@ -57,25 +58,28 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 3, 4, 13, 1, 38, 363, DateTimeKind.Local).AddTicks(9290),
+                            CreatedAt = new DateTime(2024, 3, 5, 14, 40, 37, 761, DateTimeKind.Local).AddTicks(9144),
+                            CreatedBy = "Amor",
                             DisplayOrder = 1,
-                            Name = "Marvel",
+                            Name = "Canned Food",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 3, 4, 13, 1, 38, 363, DateTimeKind.Local).AddTicks(9313),
+                            CreatedAt = new DateTime(2024, 3, 5, 14, 40, 37, 761, DateTimeKind.Local).AddTicks(9167),
+                            CreatedBy = "Amor",
                             DisplayOrder = 2,
-                            Name = "DC",
+                            Name = "Soda",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 3, 4, 13, 1, 38, 363, DateTimeKind.Local).AddTicks(9315),
+                            CreatedAt = new DateTime(2024, 3, 5, 14, 40, 37, 761, DateTimeKind.Local).AddTicks(9171),
+                            CreatedBy = "Amor",
                             DisplayOrder = 3,
-                            Name = "Sci-Fi",
+                            Name = "Movies",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -88,19 +92,21 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Createdby")
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -114,6 +120,8 @@ namespace DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -155,6 +163,17 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Ecommerce.Models.Product", b =>
+                {
+                    b.HasOne("Ecommerce.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }
