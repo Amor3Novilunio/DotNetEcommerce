@@ -245,8 +245,12 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\wwwroot\\media\\products\\e980c739-c774-437f-9192-4197cc80d02b.png",
-      "PackagePath": "staticwebassets\\media\\products\\e980c739-c774-437f-9192-4197cc80d02b.png"
+      "Id": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\wwwroot\\media\\products\\6555a240-ad4a-4bf3-b5f9-14552a1a7edd.png",
+      "PackagePath": "staticwebassets\\media\\products\\6555a240-ad4a-4bf3-b5f9-14552a1a7edd.png"
+    },
+    {
+      "Id": "c:\\Users\\Setapai\\Desktop\\PortfolioProjects\\1monthWeb\\Ecommerce\\Web\\wwwroot\\media\\products\\8858ba79-e6b4-4c8d-97b1-32d97d5edeb2.png",
+      "PackagePath": "staticwebassets\\media\\products\\8858ba79-e6b4-4c8d-97b1-32d97d5edeb2.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -63,7 +63,6 @@ public class ProductsController : Controller
             {
                 return NotFound();
             }
-            // objData.file = "theFile";
             productVM.Product = objData;
             TempData["routeStatus"] = "Update";
         }
@@ -83,6 +82,10 @@ public class ProductsController : Controller
             }
             // fileSaving
             using var filestream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create);
+            // delete if update
+            if (!string.IsNullOrEmpty(objData.Product.ImageUrl)){
+                IO.File.Delete(@$"{_wwwRootPath}\{objData.Product.ImageUrl}");
+            }
             file.CopyTo(filestream);
             objData.Product.ImageUrl = @$"media\products\{fileName}";
         }
@@ -141,7 +144,7 @@ public class ProductsController : Controller
         }
 
         string productPath = Path.Combine(_wwwRootPath, @"media\products");
-        if (Directory.Exists(productPath))
+        if (!string.IsNullOrEmpty(dataFound.ImageUrl) && Directory.Exists(productPath) )
         {
             IO.File.Delete(@$"{_wwwRootPath}\{dataFound.ImageUrl}");
         }
