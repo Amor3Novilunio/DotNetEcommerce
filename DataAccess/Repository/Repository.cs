@@ -43,7 +43,7 @@ namespace DataAccess.Repository
         {
             IQueryable<T> query = dbSet;
             query = query.Where(filter);
-            return query.FirstOrDefault();
+            return query.FirstOrDefault()!;
         }
     }
 }

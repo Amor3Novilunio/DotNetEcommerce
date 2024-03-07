@@ -6,3 +6,11 @@ item : {"Id":13,"Name":"boba23","Description":"asd","Price":23,"CategoryId":3,"I
 item : {"Id":11,"Name":"boba2","Description":"asd","Price":23,"CategoryId":3,"ImageUrl":"testa","CreatedBy":"bana","Category":null} | successfully deleted | 06/03/2024 2:08:33 PM
 item : {"Id":10,"Name":"test23","Description":"asd","Price":55,"CategoryId":1,"ImageUrl":"asd","CreatedBy":"wew","Category":null} | successfully deleted | 06/03/2024 2:08:33 PM
 item : {"Id":9,"Name":"test","Description":"test","Price":50,"CategoryId":3,"ImageUrl":"Newtest","CreatedBy":"testt","Category":null} | successfully deleted | 06/03/2024 2:08:35 PM
+item : {"Id":1,"Name":"Tuna","Description":"delatas","Price":33,"CategoryId":1,"ImageUrl":"Newtest","CreatedBy":"amor","Category":null} | successfully deleted | 07/03/2024 11:54:56 AM
+item : null | not found | 07/03/2024 11:54:56 AM
+item : {"Id":15,"Name":"yet","Description":"54","Price":54444,"CategoryId":2,"ImageUrl":null,"CreatedBy":"grhh","Category":null} | successfully deleted | 07/03/2024 11:55:54 AM
+item : {"Id":16,"Name":"boba","Description":"asd","Price":5213,"CategoryId":2,"ImageUrl":null,"CreatedBy":"test","Category":null} | successfully deleted | 07/03/2024 11:56:52 AM
+item : {"Id":17,"Name":"test","Description":"asd","Price":123,"CategoryId":2,"ImageUrl":null,"CreatedBy":"tres","Category":null} | successfully deleted | 07/03/2024 11:57:05 AM
+item : {"Id":18,"Name":"test","Description":"asd","Price":52,"CategoryId":2,"ImageUrl":"media\\products\\73bd2a3c-a0b9-442c-8bb2-8ffb9f683f89.png","CreatedBy":"rat","Category":null} | successfully deleted | 07/03/2024 11:57:07 AM
+item : {"Id":19,"Name":"test","Description":"rat","Price":52,"CategoryId":1,"ImageUrl":"media\\products\\533c24b6-aee5-4a66-8112-36f3276d8fef.png","CreatedBy":"gunBanned","Category":null} | successfully deleted | 07/03/2024 12:04:37 PM
+item : {"Id":20,"Name":"testa","Description":"dad","Price":52,"CategoryId":1,"ImageUrl":"media\\products\\32ba8635-f642-41dc-a0da-1ec7ea37aedd.png","CreatedBy":"tar","Category":null} | successfully deleted | 07/03/2024 12:08:29 PM

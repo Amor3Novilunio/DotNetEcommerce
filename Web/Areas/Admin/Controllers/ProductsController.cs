@@ -1,5 +1,6 @@
 using System.Text.Json;
 using DataAccess.Repository.IRepository;
+using IO = System.IO;
 using DumpLogger;
 using Ecommerce.Models;
 using Ecommerce.Models.ViewModels;
@@ -15,8 +16,14 @@ public class ProductsController : Controller
     private readonly Logger _logger = new(loggerFolder: nameof(ProductsController));
 
     private readonly IUnitOfWork _unitOfWork;
+    private readonly string _wwwRootPath;
 
-    public ProductsController(IUnitOfWork db) => _unitOfWork = db;
+    public ProductsController(IUnitOfWork db, IWebHostEnvironment iWebHostEnvironment)
+    {
+        _unitOfWork = db;
+        _wwwRootPath = iWebHostEnvironment.WebRootPath;
+    }
+    [HttpGet("Index")]
     public IActionResult Index()
     {
         try
@@ -32,6 +39,7 @@ public class ProductsController : Controller
         }
     }
 
+    [HttpGet]
     public IActionResult Forms(int? id)
     {
         TempData.Keep("routeStatus");
@@ -55,14 +63,30 @@ public class ProductsController : Controller
             {
                 return NotFound();
             }
+            // objData.file = "theFile";
             productVM.Product = objData;
             TempData["routeStatus"] = "Update";
         }
         return View(productVM);
     }
     [HttpPost]
-    public IActionResult Forms(ProductVM objData)
+    public IActionResult Forms(ProductVM objData, IFormFile? file)
     {
+        if (file is not null)
+        {
+            // fileStructure
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            string productPath = Path.Combine(_wwwRootPath, @"media\products");
+            if (!Directory.Exists(productPath))
+            {
+                Directory.CreateDirectory(productPath);
+            }
+            // fileSaving
+            using var filestream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create);
+            file.CopyTo(filestream);
+            objData.Product.ImageUrl = @$"media\products\{fileName}";
+        }
+
         if (!ModelState.IsValid)
         {
             ModelStateCheck(productVModel: objData.Product, Error: true);
@@ -86,7 +110,6 @@ public class ProductsController : Controller
         }
         return View(objData);
     }
-
 
     private void Create(Product objData)
     {
@@ -117,6 +140,11 @@ public class ProductsController : Controller
             return NotFound();
         }
 
+        string productPath = Path.Combine(_wwwRootPath, @"media\products");
+        if (Directory.Exists(productPath))
+        {
+            IO.File.Delete(@$"{_wwwRootPath}\{dataFound.ImageUrl}");
+        }
         _unitOfWork.Product.Delete(dataFound);
         _unitOfWork.Save();
         TempData["Status"] = "Delete";

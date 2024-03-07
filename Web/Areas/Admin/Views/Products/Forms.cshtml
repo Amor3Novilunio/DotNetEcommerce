@@ -16,54 +16,77 @@
             <h1>@TempData["routeStatus"] Product</h1>
         </div>
     </div>
-    <div class="col-12">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-2">
-                <label asp-for="Product.Name" class="my-2"></label>
-                <input asp-for="Product.Name" class="form-control" type="text" placeholder="Name">
-            </div>
-            <div class="col-12 col-md-2">
-                <label asp-for="Product.Price" class="my-2"></label>
-                <input asp-for="Product.Price" class="form-control" type="number" placeholder="Price">
-            </div>
-            <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <label asp-for="Product.Description" class="my-2"></label>
-                        <textarea asp-for="Product.Description" class="form-control"
-                            placeholder="Description"></textarea>
+    @{
+        string displayImages = "d-none";
+        string isUpdateWrapper = "col-12";
+        string isUpdateChild = "col-md-2";
+        string isUpdateChildChildren = "col-4";
+        if (TempData["routeStatus"] is "Update")
+        {
+            isUpdateWrapper = "col-6";
+            isUpdateChild = "";
+            isUpdateChildChildren = "col-12";
+            displayImages = "d-block";
+        }
+    }
+    <div class="row">
+        <div class="@isUpdateWrapper">
+            <div class="row justify-content-center">
+                <div class="col-12 @isUpdateChild">
+                    <label asp-for="Product.Name" class="my-2"></label>
+                    <input asp-for="Product.Name" class="form-control" type="text" placeholder="Name">
+                </div>
+                <div class="col-12 @isUpdateChild">
+                    <label asp-for="Product.Price" class="my-2"></label>
+                    <input asp-for="Product.Price" class="form-control" type="number" placeholder="Price">
+                </div>
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="@isUpdateChildChildren">
+                            <label asp-for="Product.Description" class="my-2"></label>
+                            <textarea asp-for="Product.Description" class="form-control"
+                                placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="@isUpdateChildChildren">
+                    <label asp-for="Product.CategoryId" class="my-2"></label>
+                    <select asp-for="Product.CategoryId" asp-items=@Model.CategoryList class="form-select">
+                        <option disabled hidden selected>Select a Category</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="@isUpdateChildChildren">
+                            <label asp-for="Product.ImageUrl" class="my-2"></label>
+                            <input asp-for="Product.ImageUrl" type="file" name="file" class="form-control"
+                                placeholder="ImageUrl"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="@isUpdateChildChildren">
+                            <label asp-for="Product.CreatedBy" class="my-2"></label>
+                            <input asp-for="Product.CreatedBy" type="text" class="form-control"
+                                placeholder="CreatedBy"></input>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <label asp-for="Product.CategoryId" class="my-2"></label>
-                <select asp-for="Product.CategoryId" asp-items=@Model.CategoryList class="form-select">
-                    <option disabled hidden selected>Select a Category</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <label asp-for="Product.ImageUrl" class="my-2"></label>
-                        <input asp-for="Product.ImageUrl" type="text" class="form-control"
-                            placeholder="ImageUrl"></input>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <label asp-for="Product.CreatedBy" class="my-2"></label>
-                        <input asp-for="Product.CreatedBy" type="text" class="form-control"
-                            placeholder="CreatedBy"></input>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-12 @isUpdateChild">
+                    <button type="Submit"
+                        class="mt-4 form-control rounded-1 text-white bg-primary">@TempData["routeStatus"]
+                        Product</button>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-2">
-                <button type="Submit" class="mt-4 form-control rounded-1 text-white bg-primary">@TempData["routeStatus"]
-                    Product</button>
+        <div class="@isUpdateWrapper @displayImages">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <img src="~/@Model.Product.ImageUrl" width="100%" height="100%" alt="ImageNotFound" />
+                </div>
             </div>
         </div>
     </div>
