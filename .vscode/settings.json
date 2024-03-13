@@ -1,3 +1,8 @@
 {
-    "dotnet.defaultSolution": "Web.sln"
+    "dotnet.defaultSolution": "Web.sln",
+    "launch": {
+        "requireExactSource": false,
+        "configurations": [],
+        "compounds": []
+    }
 }

@@ -33,16 +33,31 @@ namespace DataAccess.Repository
             dbSet.RemoveRange(entity);
         }
 
-        public IEnumerable<T> ReadAll()
+        public IEnumerable<T> ReadAll(string? includeProps = null)
         {
             IQueryable<T> query = dbSet;
+            if(!string.IsNullOrEmpty(includeProps))
+            {
+                foreach(var incProps in includeProps
+                    .Split(new char[','] , StringSplitOptions.RemoveEmptyEntries))
+                {
+                   query = query.Include(incProps);
+                }
+            }
             return query.ToList();
         }
 
-        public T ReadFirstOrDefault(Expression<Func<T, bool>> filter)
+        public T ReadFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProps = null)
         {
             IQueryable<T> query = dbSet;
             query = query.Where(filter);
+            if (!string.IsNullOrEmpty(includeProps))
+            {
+                foreach (var incProps in includeProps.Split(new char[','], StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(incProps);
+                }
+            }
             return query.FirstOrDefault()!;
         }
     }

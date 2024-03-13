@@ -28,7 +28,7 @@ public class ProductsController : Controller
     {
         try
         {
-            List<Product> objData = _unitOfWork.Product.ReadAll().ToList();
+            List<Product> objData = _unitOfWork.Product.ReadAll(includeProps: "Category").ToList();
             _logger.Read($"item : {JsonSerializer.Serialize(objData)} | successfully retrieved");
             return View(objData);
         }
@@ -83,7 +83,8 @@ public class ProductsController : Controller
             // fileSaving
             using var filestream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create);
             // delete if update
-            if (!string.IsNullOrEmpty(objData.Product.ImageUrl)){
+            if (!string.IsNullOrEmpty(objData.Product.ImageUrl))
+            {
                 IO.File.Delete(@$"{_wwwRootPath}\{objData.Product.ImageUrl}");
             }
             file.CopyTo(filestream);
@@ -144,7 +145,7 @@ public class ProductsController : Controller
         }
 
         string productPath = Path.Combine(_wwwRootPath, @"media\products");
-        if (!string.IsNullOrEmpty(dataFound.ImageUrl) && Directory.Exists(productPath) )
+        if (!string.IsNullOrEmpty(dataFound.ImageUrl) && Directory.Exists(productPath))
         {
             IO.File.Delete(@$"{_wwwRootPath}\{dataFound.ImageUrl}");
         }
@@ -172,4 +173,12 @@ public class ProductsController : Controller
             _logger.Create($"item : {JsonSerializer.Serialize(productVModel)} | successfully updated");
         }
     }
+
+    // Region API CALLS
+    public IActionResult Request_Get()
+    {
+        List<Product> objData = _unitOfWork.Product.ReadAll(includeProps: "Category").ToList();
+        return Json(new { data = objData });
+    }
+    // End Region
 }

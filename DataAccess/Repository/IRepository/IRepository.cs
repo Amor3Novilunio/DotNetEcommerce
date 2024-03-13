@@ -9,8 +9,8 @@ namespace DataAccess.Repository.IRepository
     public interface IRepository<T> where T : class
     {
         // T - Model
-        IEnumerable<T> ReadAll();
-        T ReadFirstOrDefault(Expression<Func<T, bool>> filter);
+        IEnumerable<T> ReadAll(string? includeProps = null);
+        T ReadFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProps = null);
         void Create(T entity);
         void Delete(T entity);
         void DeleteMany(IEnumerable<T> entity);

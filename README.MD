@@ -10,5 +10,6 @@
     * EntityFrameworkCore
     * EntityFrameworkCore.SqlServer
     * EntityFrameworkCore.Tools
+    * EntityFrameworkCore.Identity
     * Microsoft.VisualStudio.Web.CodeGeneration.Design
     * DumpLogger

@@ -22,7 +22,7 @@
         <tr>
             <th>Product</th>
             <th>Price</th>
-            <th>Prices</th>
+            <th>Category</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -32,6 +32,10 @@
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Price</td>
+                @if (item.Category != null)
+                {
+                    <td>@item.Category.Name</td>
+                }
                 <td class="d-flex justify-content-around">
                     <a class="btn btn-primary text-decoration-none form-control mx-2" asp-controller="Products"
                         asp-action="Forms" asp-route-id="@item.Id">
@@ -48,9 +52,3 @@
         }
     </tbody>
 </table>
-
-@section Scripts {
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}
